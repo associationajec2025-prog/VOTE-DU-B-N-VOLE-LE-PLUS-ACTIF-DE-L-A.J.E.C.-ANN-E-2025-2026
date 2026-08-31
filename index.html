@@ -4,6 +4,331 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Vote du bénévole le plus actif | A.J.E.C. 2026</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+header {
+    background: linear-gradient(135deg, #0b5d3b, #168a57);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+header p {
+    font-size: 17px;
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 25px 15px 50px;
+}
+
+.introduction {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.introduction h2 {
+    color: #0b5d3b;
+    margin-top: 0;
+}
+
+.candidats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.candidat {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.candidat:hover {
+    transform: translateY(-5px);
+}
+
+.photo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #e8f3ed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    font-size: 40px;
+}
+
+.candidat h3 {
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.poste {
+    color: #168a57;
+    font-weight: bold;
+    min-height: 40px;
+}
+
+button {
+    background: #0b5d3b;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+}
+
+button:hover {
+    background: #07452c;
+}
+
+.vote-info {
+    margin-top: 15px;
+    color: #666;
+    font-size: 14px;
+}
+
+.resultat {
+    background: white;
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.resultat h2 {
+    text-align: center;
+    color: #0b5d3b;
+}
+
+footer {
+    background: #0b5d3b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.message {
+    display: none;
+    text-align: center;
+    background: #dff5e7;
+    color: #0b5d3b;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 24px;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>🏆 VOTE DU BÉNÉVOLE LE PLUS ACTIF</h1>
+    <p>
+        Association Jeune Esprit Créatif – A.J.E.C.<br>
+        Édition 2026
+    </p>
+</header>
+
+<div class="container">
+
+<div class="introduction">
+
+<h2>🗳️ Faites votre choix !</h2>
+
+<p>
+Votez pour le bénévole qui s'est le plus distingué par son engagement,
+sa disponibilité, son travail et sa participation aux activités de
+l'Association Jeune Esprit Créatif.
+</p>
+
+<p><strong>Chaque vote compte !</strong></p>
+
+</div>
+
+<div id="message" class="message">
+Merci ! Votre vote a été enregistré. ✅
+</div>
+
+<div class="candidats">
+
+<div class="candidat">
+<div class="photo">👤</div>
+<h3>Ali Youssouf Mohamed</h3>
+<p class="poste">Président</p>
+<button onclick="voter('Ali Youssouf Mohamed')">🗳️ Voter</button>
+</div>
+
+<div class="candidat">
+<div class="photo">👤</div>
+<h3>Youssouf Moussa Mohamed</h3>
+<p class="poste">Vice-président</p>
+<button onclick="voter('Youssouf Moussa Mohamed')">🗳️ Voter</button>
+</div>
+
+<div class="candidat">
+<div class="photo">👤</div>
+<h3>Houmed Ali Houmed</h3>
+<p class="poste">Secrétaire général</p>
+<button onclick="voter('Houmed Ali Houmed')">🗳️ Voter</button>
+</div>
+
+<div class="candidat">
+<div class="photo">👤</div>
+<h3>Hasna Abrahim Moussa</h3>
+<p class="poste">Trésorière</p>
+<button onclick="voter('Hasna Abrahim Moussa')">🗳️ Voter</button>
+</div>
+
+<div class="candidat">
+<div class="photo">👤</div>
+<h3>Mohamed Houmed Abarda</h3>
+<p class="poste">Contrôleur général</p>
+<button onclick="voter('Mohamed Houmed Abarda')">🗳️ Voter</button>
+</div>
+
+<div class="candidat">
+<div class="photo">👤</div>
+<h3>Madina Omar Moussa</h3>
+<p class="poste">Représentante extérieure</p>
+<button onclick="voter('Madina Omar Moussa')">🗳️ Voter</button>
+</div>
+
+<div class="candidat">
+<div class="photo">👤</div>
+<h3>Fathia Ahmed Hassan</h3>
+<p class="poste">Cheffe de cellule Wahle-Daba</p>
+<button onclick="voter('Fathia Ahmed Hassan')">🗳️ Voter</button>
+</div>
+
+<div class="candidat">
+<div class="photo">👤</div>
+<h3>Ali Barih Abdallah</h3>
+<p class="poste">Contrôleur adjoint</p>
+<button onclick="voter('Ali Barih Abdallah')">🗳️ Voter</button>
+</div>
+
+<div class="candidat">
+<div class="photo">👤</div>
+<h3>Aboubacar Abdo Mohamed</h3>
+<p class="poste">Chef de tradition</p>
+<button onclick="voter('Aboubacar Abdo Mohamed')">🗳️ Voter</button>
+</div>
+
+</div>
+
+<div class="resultat">
+
+<h2>📊 Résultats des votes</h2>
+
+<div id="resultats">
+Les résultats apparaîtront ici.
+</div>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 Association Jeune Esprit Créatif – A.J.E.C.
+<br>
+Tous droits réservés.
+</footer>
+
+<script>
+
+let votes = JSON.parse(localStorage.getItem("votesAJEC")) || {};
+
+function voter(nom) {
+
+    if (localStorage.getItem("dejaVoteAJEC")) {
+        alert("⚠️ Vous avez déjà voté !");
+        return;
+    }
+
+    votes[nom] = (votes[nom] || 0) + 1;
+
+    localStorage.setItem("votesAJEC", JSON.stringify(votes));
+    localStorage.setItem("dejaVoteAJEC", "oui");
+
+    document.getElementById("message").style.display = "block";
+
+    afficherResultats();
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+function afficherResultats() {
+
+    let resultatHTML = "";
+
+    for (let nom in votes) {
+        resultatHTML += "<p><strong>" + nom + "</strong> : " +
+        votes[nom] + " vote(s)</p>";
+    }
+
+    if (resultatHTML === "") {
+        resultatHTML = "Aucun vote pour le moment.";
+    }
+
+    document.getElementById("resultats").innerHTML = resultatHTML;
+}
+
+afficherResultats();
+
+</script>
+
+</body>
+  </html><!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Vote A.J.E.C. 2026</title>
 
 <style>
